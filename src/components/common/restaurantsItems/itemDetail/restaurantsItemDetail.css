@@ -1,0 +1,122 @@
+.split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  
+  /* Control the left side */
+  .left {
+    left: 0;
+    /* background-color: #111; */
+  }
+  
+  /* Control the right side */
+  .right {
+    right: 0;
+    /* background-color: red; */
+  }
+  
+  /* If you want the content centered horizontally and vertically */
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: white;
+    padding-left: 80px;
+  }
+  
+  /* Style the image inside the centered container, if needed */
+  /* .centered img {
+    width: 150px;
+    border-radius: 50%;
+  } */
+
+
+  .main-cart-section h1 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.8rem;
+    text-transform: capitalize;
+    color: rgba(41, 41, 41, 1);
+    margin-bottom: 1rem;
+  }
+  
+  .main-cart-section .total-items {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    color: var(--main-color);
+    margin-bottom: 5rem;
+  }
+  
+  .total-items-count {
+    font-weight: bold;
+    color: var(--main-color);
+  }
+  
+  /* cart main div start  */
+  
+  .main-cart-section .cart-items {
+    width: 90%;
+    height: 60%;
+    background: linear-gradient(
+      103.49deg,
+      #ffffff -28.13%,
+      rgba(242, 247, 255, 0.5) 116.84%
+    );
+    box-shadow: rgba(0, 0, 0, 0.08) 0rem 0.4rem 1.2rem;
+    border-radius: 2rem;
+    margin: auto;
+    margin: auto;
+    display: grid;
+    place-items: center;
+  }
+
+  .cart-items hr {
+    margin: 2rem auto;
+    overflow-y: scroll;
+  }
+  
+  .cart-items-container {
+    width: 90%;
+    height: 56rem;
+  }
+  .total-items-count {
+    font-weight: bold;
+    color: var(--main-color);
+  }  
+
+  .content-padding{
+    padding-left:"10%"
+  }
+
+  .card-total h3 span {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.5rem;
+    line-height: 3.2rem;
+    text-transform: capitalize;
+    color: #000000;
+    margin-left: 1rem;
+  }
+  
+  .card-total button {
+    border: none;
+    font-size: 1rem;
+    padding: 1rem 1.5rem;
+
+    color: #fff;
+    background-color: #349bf3;
+    text-transform: uppercase;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    letter-spacing: 1px;
+  }

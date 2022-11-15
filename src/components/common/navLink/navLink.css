@@ -1,0 +1,32 @@
+.link-Items {
+  color: white;
+  font-size: 30px;
+  margin: 0 10px; 
+  padding: 0 5px; 
+}
+
+.dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  background-color: #f9f9f9;
+  text-color: black;
+  color: brown;
+  font-size: 20px;
+  text-align: center;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  font-family: Arial;
+}
