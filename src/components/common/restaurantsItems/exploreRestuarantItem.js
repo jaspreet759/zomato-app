@@ -77,6 +77,3 @@ const ExploreRestuarantItem = (props) => {
 };
 
 export default ExploreRestuarantItem;
-
-//  <RestaurantsItemDetail onShowCart={showCart} />
-//       {cartIsShown && <CartList />}

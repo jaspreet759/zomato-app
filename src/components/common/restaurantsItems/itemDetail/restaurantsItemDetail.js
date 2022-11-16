@@ -5,7 +5,6 @@ import { useParams } from "react-router-dom";
 import { restaurants } from "../../../../data/restaurants";
 import RestaurantsItemsList from "../itemList/itemList";
 import { detailItemListContext } from "../exploreRestuarantItem";
-import CartContext from "../../storeItmToCart/cartContext";
 import "./restaurantsItemDetail.css";
 import { CartList } from "../../cart/cartList";
 export const RestaurantsItemDetail = () => {
@@ -64,10 +63,6 @@ export const RestaurantsItemDetail = () => {
                 Cart Total : <span>{totalAmount}</span>
               </h3>
               <br/>
-              {/* <button>checkout</button>{" "} */}
-              {/* <button className="clear-cart" onClick={clearCart}>
-            Clear Cart
-          </button> */}
             </div>
           </section>
         </div>

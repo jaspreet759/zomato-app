@@ -1,28 +1,27 @@
 import Model from "../UI/Modal";
 import "./cartList.css";
-import { detailItemListContext } from "../restaurantsItems/exploreRestuarantItem";
 import React, { useContext } from "react";
 import CartContext from "../storeItmToCart/cartContext";
-
-// import CartItem from "./cartItem";
 import { CartItem } from "./cartItem";
+import { detailItemListContext } from "../restaurantsItems/exploreRestuarantItem";
 
 export const CartList = (props) => {
-  let hasItems;
+  let hasItems = false;
   let cartItems;
   let emptyCartListMsg;
   let totalAmount;
-  const { hideCart } = useContext(detailItemListContext);
+  const { hideCart, clearCart} = useContext(detailItemListContext);
   const cartCtx = useContext(CartContext);
-
-  console.log("cartCtx.cartContext.items", cartCtx.cartContext);
-  if (cartCtx.cartContext.items != undefined) {
+  if (
+    cartCtx.cartContext.items.length >= 1
+  ) {
     totalAmount = `${cartCtx.cartContext.totalAmount.toFixed(2)}`;
-    // console.log('cartCtx.cartContext.totalAmount==',cartCtx.cartContext)
-    // console.log('totalAmount==',totalAmount)
-    hasItems = cartCtx.cartContext.items.lenght > 0;
+    hasItems += true;
+    const addItemToCartHandler = (item) => {
 
-    const addItemToCartHandler = (item) => {};
+      cartCtx.cartContext.addItem({...item,amount:1})
+
+    };
     const rmvItemFromCartHandler = (id) => {};
     cartItems = (
       <ul className="cart-items">
@@ -39,15 +38,16 @@ export const CartList = (props) => {
         ))}
       </ul>
     );
-  } else {
-    emptyCartListMsg = "No Data Found, Please Add Items From Explore Section";
-    totalAmount = 0
+  }
+  else if (cartCtx.cartContext.items.length === 0) {
+    emptyCartListMsg = "Oops..! No Data Found, Please Add Items ";
+    totalAmount = 0;
   }
 
   return (
     <Model>
       {cartItems}
-      <span className="emptyListMsg"> {!cartItems && emptyCartListMsg} </span>
+      <span className="emptyListMsg"> { emptyCartListMsg} </span>
       <div className="total">
         <span>Total Amount</span>
         <span>${totalAmount}</span>

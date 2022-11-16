@@ -2,51 +2,30 @@ import React, { useContext, useRef } from "react";
 import { detailItemListContext } from "../exploreRestuarantItem";
 import "./itemList.css";
 import CartContext from "../../storeItmToCart/cartContext";
-import Header from "../../header/index";
 import {toast} from 'react-toastify';
-
 import 'react-toastify/dist/ReactToastify.css';
 toast.configure()
-const RestaurantsItemsList = ({ id, cover, title, price, quantity }, props) => {
-  let disabled;
-  const { removeItem, increement, decreement, showCart } = useContext(
+const RestaurantsItemsList = ({ id, cover, title, price, quantity }) => {
+  const { increement, decreement } = useContext(
     detailItemListContext
   );
-
   const cartCtx = useContext(CartContext);
   const inputRef = useRef();
-
-//   console.log('quantity',quantity)
-//   console.log('quantity.lenght',quantity.lenght)
-// if(quantity !== 0) {
-//    disabled = 'false';
-// }
-// else{
-//   disabled = 'true';
-// }
   
   const submitHandler = (event) => {
     event.preventDefault();
     const enteredAmount = inputRef.current.value;
-    const enteredAmountNo = +enteredAmount;
-
     cartCtx.cartContext.addItem({
       id: id,
       name: title,
       amount: quantity,
       price: price,
     });
-    // cartCtx.cartContext.totalAmount = quantity
-    toast('Hello Geeks')
+    toast.success('Your item is successfully added in cart')
 
   };
-  // const handleClick = () => {
-  //   let isOpened = false;
-  //   isOpened = !isOpened;
-  // };
 
   return (
-   
     
          <div className="items-info">
       <div className="delivery-item-cover">
@@ -66,13 +45,6 @@ const RestaurantsItemsList = ({ id, cover, title, price, quantity }, props) => {
         <h3>{price}</h3>
       </div>
 
-      {/* <div className="remove-item">
-        <i className="fi fi-rr-trash" onClick={() => removeItem(id)}>
-          {" "}
-        </i>
-      </div> */}
-      {/* <Header/> */}
-
       <div className="remove-item">
         <button onClick = {submitHandler}  > + Add </button>
       </div>
@@ -83,11 +55,3 @@ const RestaurantsItemsList = ({ id, cover, title, price, quantity }, props) => {
 };
 
 export default RestaurantsItemsList;
-
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     removeItem: () => dispatch(removeItem())
-//   }
-// }
-
-// export default connect(mapDispatchToProps)(RestaurantsItemsList)
